@@ -1,0 +1,98 @@
+body {
+    background: #000;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 0 0 15px #ff0090, 0 0 30px #ff0090, 0 0 45px #ff0090;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    background: #111;
+    color: #fff;
+    border: 2px solid #ff0090;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    outline: none;
+    text-shadow: 0 0 10px #ff0090;
+}
+
+button:hover {
+    background: #222;
+    box-shadow: 0 0 20px #ff0090, 0 0 40px #ff0090, 0 0 60px #ff0090;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.cell {
+    width: 120px;
+    height: 120px;
+    background: #111;
+    border: 3px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    cursor: pointer;
+    position: relative;
+    border-radius: 10px;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cell:hover {
+    box-shadow: 0 0 20px #00ffff;
+}
+
+.cell.X {
+    color: #ff0090;
+    text-shadow: 0 0 15px #ff0090, 0 0 30px #ff0090, 0 0 45px #ff0090;
+}
+
+.cell.O {
+    color: #00ffff;
+    text-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff, 0 0 45px #00ffff;
+}
+
+.winning-cell {
+    animation: neonBlink 1s infinite alternate;
+}
+
+@keyframes neonBlink {
+    0% {
+        box-shadow: 0 0 15px #00ff00, 0 0 30px #00ff00;
+    }
+    100% {
+        box-shadow: 0 0 25px #00ff00, 0 0 50px #00ff00;
+    }
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    text-shadow: 0 0 15px #fff, 0 0 30px #fff;
+}
